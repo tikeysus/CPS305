@@ -1,5 +1,0 @@
-(defun sequential-search (array element)
-  (dotimes (i (length array))
-    (when (equal (aref array i) element)
-      t))
-  nil)
