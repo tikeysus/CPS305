@@ -1,4 +1,0 @@
-(defun count-nums-recursive (list-struct &optional (nums 0))
-  (cond
-    ((null list-struct) 0)
-    ((not ))))
