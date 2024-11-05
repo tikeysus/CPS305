@@ -1,0 +1,5 @@
+(defun get-odds-recursive (list-struct &optional (acc-list nil))
+  (cond ((null list-struct) acc-list)
+        ((oddp (car list-struct))
+         (get-odds-recursive (cdr list-struct) (cons (car list-struct) acc-list)))
+        (t (get-odds-recursive (cdr list-struct) acc-list))))
