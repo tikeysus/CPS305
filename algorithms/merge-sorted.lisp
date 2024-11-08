@@ -6,18 +6,18 @@
     (t
      (do ((stack (make-list 0)))
           ((or (null (first list1)) (null (first list2)))
-           (progn ;return statement starts here after do loop is over
+           (progn
              (dolist (element list1)
-               (push element stack)
+               (setf stack (append stack (list element)))
                (pop list1))
              (dolist (element list2)
-               (push element stack)
+               (setf stack (append stack (list element)))
                (pop list2))
-             (reverse stack)))
+             stack))
        (if (funcall comparator (first list1) (first list2))
            (progn
-             (push (first list1) stack)
+             (setf stack (append stack (list (first list1))))
              (pop list1))
            (progn
-             (push (first list2) stack)
+             (setf stack (append stack (list (first list2))))
              (pop list2)))))))
