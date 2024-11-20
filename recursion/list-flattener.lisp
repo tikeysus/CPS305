@@ -1,3 +1,4 @@
+
 (defun list-flattener (list-struct &optional (accumulator nil))
   (cond
     ((null list-struct) accumulator)
